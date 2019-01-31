@@ -27,3 +27,9 @@ class Order(models.Model):
 
     def __str__(self):
         return self.order_topic
+
+class Comment(models.Model):
+    order=models.ForeignKey(Order, on_delete=models.CASCADE)
+    user=models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE)
+    time=models.DateTimeField()
+    is_seen=models.BooleanField(default=False)
