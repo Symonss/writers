@@ -3,7 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.db import transaction
 from django.forms.utils import ValidationError
 
-from coreapp.models import  (User, Client, SubAdmin)
+from coreapp.models import  (User, Client, Admin, SubAdmin)
 
 class WriterSignUpForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
@@ -38,4 +38,16 @@ class SubAdminSignUpForm(UserCreationForm):
         user.is_sub_admin = True
         user.save()
         client = Client.objects.create(user=user)
+        return user
+
+class AdminSignUpForm(UserCreationForm):
+    class Meta(UserCreationForm.Meta):
+        model = User
+
+    @transaction.atomic
+    def save(self):
+        user = super().save(commit=False)
+        user.is_admin = True
+        user.save()
+        admin = Admin.objects.create(user=user)
         return user

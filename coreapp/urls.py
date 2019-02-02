@@ -8,7 +8,7 @@
 
 from django.urls import include, path
 
-from .views import coreapp, clients, writers, sub_admin
+from .views import coreapp, clients, admins, writers, sub_admin
 
 urlpatterns = [
     path('', coreapp.home, name='home'),
@@ -27,6 +27,15 @@ urlpatterns = [
         # path('taken/', students.TakenQuizListView.as_view(), name='taken_quiz_list'),
         # path('quiz/<int:pk>/', students.take_quiz, name='take_quiz'),
     ], 'coreapp'), namespace='sub_admins')),
+
+
+    path('Super-Admin/', include(([
+        path('', admins.AdminDashboardView.as_view(), name='admins_dashboard'),
+        # path('interests/', students.StudentInterestsView.as_view(), name='student_interests'),
+        # path('taken/', students.TakenQuizListView.as_view(), name='taken_quiz_list'),
+        # path('quiz/<int:pk>/', students.take_quiz, name='take_quiz'),
+    ], 'coreapp'), namespace='admins')),
+
 
     path('writers/', include(([
         path('', writers.WriterDashboardView.as_view(), name='writers_dashboard'),
