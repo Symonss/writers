@@ -10,6 +10,10 @@ def home(request):
     if request.user.is_authenticated:
         if request.user.is_client:
             return redirect('clients:clients_dashboard')
+        elif request.user.is_admin:
+                return redirect('admins:admins_dashboard')
+        elif request.user.is_sub_admin:
+                return redirect('sub_admins:sub_admins_dashboard')
         else:
             return redirect('writers:writers_dashboard')
     return render(request, 'coreapp/home.html')

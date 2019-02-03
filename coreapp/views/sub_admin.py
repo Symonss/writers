@@ -28,7 +28,7 @@ class SubAdminSignUpView(CreateView):
         login(self.request, user)
         return redirect('sub_admins:sub_admins_dashboard')
 
-
+@method_decorator([login_required, sub_admin_required], name='dispatch')
 class SubAdminDashboardView(ListView):
     model = User
     context_object_name = 'sub_admins_dashboard'

@@ -28,7 +28,7 @@ class WriterSignUpView(CreateView):
         login(self.request, user)
         return redirect('writers:writers_dashboard')
 
-
+@method_decorator([login_required, writer_required], name='dispatch')
 class WriterDashboardView(ListView):
     model = User
     context_object_name = 'writers_dashboard'

@@ -26,7 +26,7 @@ class ClientSignUpView(CreateView):
         login(self.request, user)
         return redirect('clients:clients_dashboard')
 
-
+@method_decorator([login_required, client_required], name='dispatch')
 class ClientDashboardView(ListView):
     model = Client
     context_object_name = 'clients_dashboard'

@@ -29,6 +29,7 @@ class AdminSignUpView(CreateView):
         return redirect('admins:admins_dashboard')
 
 
+@method_decorator([login_required, admin_required], name='dispatch')
 class AdminDashboardView(ListView):
     model = User
     context_object_name = 'admins_dashboard'
