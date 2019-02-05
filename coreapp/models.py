@@ -13,18 +13,32 @@ class User(AbstractUser):
     is_writer = models.BooleanField(default=False)
     is_sub_admin = models.BooleanField(default=False)
     is_admin =models.BooleanField(default=False)
-
+    first_name= models.CharField(max_length=50, default='Peterson')
+    last_name= models.CharField(max_length=50, default='Peterson')
+    phone = models.IntegerField(default='0792799958')
+    email= models.CharField(max_length=50, default='yourmail@gmail.com')
 
 
 class Client(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    first_name= models.CharField(max_length=50, default='Peterson')
+    last_name= models.CharField(max_length=50, default='Peterson')
+    phone = models.IntegerField(default='0792799958')
+    email= models.CharField(max_length=50, default='yourmail@gmail.com')
     #oder = models.ForeignKey(Order, on_delete=models.CASCADE, primary_key=True)
 class SubAdmin(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
+    first_name= models.CharField(max_length=50, default='Peterson')
+    last_name= models.CharField(max_length=50, default='Peterson')
+    phone = models.IntegerField(default='0792799958')
+    email= models.CharField(max_length=50, default='yourmail@gmail.com')
 
 class Admin(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, primary_key=True)
-
+    first_name= models.CharField(max_length=50, default='Peterson')
+    last_name= models.CharField(max_length=50, default='Peterson')
+    phone = models.IntegerField(default='0792799958')
+    email= models.CharField(max_length=50, default='yourmail@gmail.com')
 
 
 class Status(models.Model):
@@ -47,6 +61,7 @@ class Order(models.Model):
     date_created = models.DateTimeField()
     deadline = models.DateTimeField()
     pages = models.IntegerField()
+    price = models.IntegerField(default='50')
     words = models.IntegerField()
     order_files = models.CharField(max_length=200, blank=True)
 

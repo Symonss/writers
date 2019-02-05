@@ -8,6 +8,7 @@ from coreapp.models import  (User, Client, Admin, SubAdmin)
 class WriterSignUpForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = User
+        # fields = ('first_name', 'last_name', 'phone','email', )
 
     def save(self, commit=True):
         user = super().save(commit=False)
@@ -19,6 +20,7 @@ class WriterSignUpForm(UserCreationForm):
 class ClientSignUpForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = User
+        # fields = ('first_name', 'last_name', 'phone','email', )
 
     @transaction.atomic
     def save(self):
@@ -31,6 +33,7 @@ class ClientSignUpForm(UserCreationForm):
 class SubAdminSignUpForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = User
+        # fields = ('first_name', 'last_name', 'phone','email', )
 
     @transaction.atomic
     def save(self):
@@ -43,6 +46,7 @@ class SubAdminSignUpForm(UserCreationForm):
 class AdminSignUpForm(UserCreationForm):
     class Meta(UserCreationForm.Meta):
         model = User
+        # fields = ('first_name', 'last_name', 'phone','email', )
 
     @transaction.atomic
     def save(self):

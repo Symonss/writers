@@ -12,7 +12,7 @@ from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
 
 from ..decorators import admin_required
 from ..forms import AdminSignUpForm
-from ..models import User
+from ..models import User, Order
 
 class AdminSignUpView(CreateView):
     model = User
@@ -31,9 +31,6 @@ class AdminSignUpView(CreateView):
 
 @method_decorator([login_required, admin_required], name='dispatch')
 class AdminDashboardView(ListView):
-    model = User
-    context_object_name = 'admins_dashboard'
+    model = Order
+    context_object_name = 'orders'
     template_name = 'coreapp/admins/my_dashboard.html'
-
-    def my_dashboard(request):
-        return render(request, 'coreapp/admins/my_dashboard.html', {})
