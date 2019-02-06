@@ -12,7 +12,7 @@ from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
 
 from ..decorators import admin_required
 from ..forms import AdminSignUpForm
-from ..models import User, Order
+from ..models import User, Order,User
 
 class AdminSignUpView(CreateView):
     model = User
@@ -34,3 +34,12 @@ class AdminDashboardView(ListView):
     model = Order
     context_object_name = 'orders'
     template_name = 'coreapp/admins/my_dashboard.html'
+
+@method_decorator([login_required, admin_required], name='dispatch')
+class ViewWritersView(ListView):
+    model = User
+    context_object_name = 'writers'
+    template_name = 'coreapp/admins/viewWriters.html'
+    # def get_queryset(self):
+    #
+    #     return queryset

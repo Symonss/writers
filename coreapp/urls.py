@@ -31,6 +31,7 @@ urlpatterns = [
 
     path('Super-Admin/', include(([
         path('', admins.AdminDashboardView.as_view(), name='admins_dashboard'),
+        path('writers', admins.ViewWritersView.as_view(), name='writers'),
         # path('interests/', students.StudentInterestsView.as_view(), name='student_interests'),
         # path('taken/', students.TakenQuizListView.as_view(), name='taken_quiz_list'),
         # path('quiz/<int:pk>/', students.take_quiz, name='take_quiz'),
