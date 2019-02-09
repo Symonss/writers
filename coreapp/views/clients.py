@@ -6,11 +6,11 @@ from django.db.models import Count
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
 from django.utils.decorators import method_decorator
-from django.views.generic import CreateView, ListView, UpdateView
+from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 
 from ..decorators import client_required
 from ..forms import ClientSignUpForm
-from ..models import Client, User
+from ..models import Client, User, Order
 
 class ClientSignUpView(CreateView):
     model = User
@@ -34,3 +34,19 @@ class ClientDashboardView(ListView):
 
     def my_dashboard(request):
         return render(request, 'coreapp/clients/my_dashboard.html', {})
+
+
+class OrderCreate(CreateView):
+    model = Order
+    fields = '__all__'
+    success_url = reverse_lazy('home')
+
+    # initial = {'date_of_death': '05/01/2018'}
+
+class OrderUpdate(UpdateView):
+    model = Order
+    fields = ['pages']
+
+class OrderDelete(DeleteView):
+    model = Order
+    success_url = reverse_lazy('home')

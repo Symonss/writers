@@ -15,8 +15,11 @@ urlpatterns = [
     # path('create', coreapp.create_order, name='create_order'),
 
     path('clients/', include(([
-        # path('create', admins.OrderCreateView.as_view(), name='create_order'),
+        path('order/create/', clients.OrderCreate.as_view(), name='order_create'),
         path('', clients.ClientDashboardView.as_view(), name='clients_dashboard'),
+        path('order/<int:pk>/update/', clients.OrderUpdate.as_view(), name='order_update'),
+        path('order/<int:pk>/delete/', clients.OrderDelete.as_view(), name='order_delete'),
+
         # path('interests/', students.StudentInterestsView.as_view(), name='student_interests'),
         # path('taken/', students.TakenQuizListView.as_view(), name='taken_quiz_list'),
         # path('quiz/<int:pk>/', students.take_quiz, name='take_quiz'),
