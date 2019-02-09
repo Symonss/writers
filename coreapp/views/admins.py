@@ -2,6 +2,7 @@ from django.contrib import messages
 from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
 from django.db import transaction
+from django.utils import timezone
 from django.db.models import Avg, Count
 from django.forms import inlineformset_factory
 from django.shortcuts import get_object_or_404, redirect, render
@@ -10,7 +11,7 @@ from django.utils.decorators import method_decorator
 from django.views.generic import (CreateView, DeleteView, DetailView, ListView,
                                   UpdateView)
 
-from ..decorators import admin_required
+from ..decorators import admin_required, client_required
 from ..forms import AdminSignUpForm
 from ..models import User, Order,User
 
@@ -43,3 +44,17 @@ class ViewWritersView(ListView):
     # def get_queryset(self):
     #
     #     return queryset
+
+# @method_decorator([login_required, admin_required], name='dispatch')
+# class OrderCreateView(CreateView):
+#     model=Order
+#     fields = ('order_topic', 'order_description', 'pages','track_number','date_created' )
+#     template_name = 'coreapp/admins/order_creat_view.html'
+
+
+# @method_decorator([login_required, client_required], name='dispatch')
+# class OrderCreateView(CreateView):
+#     form_class= Order
+#     template_name = 'coreapp/admins/order_form.html'
+#
+#     # fields = ['price','deadline', 'words', 'order_topic', 'order_description', 'pages']

@@ -10,7 +10,7 @@
     <meta name="keywords" content="au theme template">
 
     <!-- Title Page-->
-    <title>ADMIN DASHBOARD.</title>
+    <title>CLIENTS DASHBOARD.</title>
 
     <!-- Fontfaces CSS-->
     <link href="../../static/css/font-face.css" rel="stylesheet" media="all">
@@ -43,7 +43,7 @@
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.html">
-                            <h2 style = "color:blue;">ADMINISTRATOR PANEL .</h2>
+                            <h2 style = "color:blue;">CLIENT PANEL .</h2>
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -158,52 +158,45 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                   <h4 style = "color:blue;"><span class = "fas fa-user">   </span>    ADMIN PANEL.</h4>
+                   <h4 style = "color:blue;"><span class = "fas fa-user">   </span> CLIENT PANEL.</h4>
                 </a>
             </div>
+			<div class="account2">
+                    <div class="image img-cir img-120">
+                        <img src="../../static/images/icon/avatar-big-01.jpg" alt="John Doe" />
+                    </div>
+                    <h4 class="name">john doe</h4>
+                    <a href="#">Sign out</a>
+                </div>
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
+				
                     <ul class="list-unstyled navbar__list">
                         <li>
-                            <a href="index.html">
+                            <a href="clients.html">
                                 <i class="fas fa-tachometer-alt"></i>Home .</a>
                         </li>          
                        
-                        <li>
-                            <a href="orders.html">
-                                <i class="fas fa-eye"></i>View All Orders.</a>
+                        <li class = "active">
+                            <a href="placeholder.html">
+                                <i class="fas fa-eye"></i>Place Order.</a>
                         </li>						
-						<li class = "active">
-                            <a href="bids.html" >
-                                <i class="fas fas fa-eye"></i>View All Bids.</a>
-                        </li>
-						  <li>
-                            <a href="viewClients.html">
-                                <i class=" fas fa-user"></i>View Clients.</a>
-                        </li>
-                        <li>
-                            <a href="viewWriters.html">
-                                <i class="fas fa-user"></i>View Writers</a>
-                        </li>
-                        <li>
-                            <a href="viewSubAdmins.html">
-                                <i class="fas fa-user"></i>View Sub-Admins</a>
-                        </li>
-                        <li class="has-sub">
+						<li>
+                            <a href="manageOrders.html">
+                                <i class="fas fas fa-eye"></i>Manage Orders.</a>
+                        </li>						                      
+                                                <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-comment"></i>Message Board.<span class="arrow">
                                          <i class="fas fa-angle-down"></i>
                                     </span></a>
 								       
-                            <ul class="list-unstyled navbar__sub-list js-sub-list">
+                            <ul class="list-unstyled navbar__sub-list js-sub-list">                                
                                 <li>
-                                    <a href="#">Message Client.</a>
+                                    <a href="inbox.html">Message Writer</a>
                                 </li>
                                 <li>
-                                    <a href="#">Message Writer</a>
-                                </li>
-                                <li>
-                                    <a href="#">Message Sub-Admin</a>
+                                    <a href="inbox.html">Message Sub-Admin</a>
                                 </li>
                             </ul>
                         </li>
@@ -344,7 +337,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                            <img src="../../static/images/icon/avatar-01.jpg" alt="John Doe" />
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#">john doe</a>
@@ -353,7 +346,7 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="images/icon/avatar-01.jpg" alt="John Doe" />
+                                                        <img src="../../static/images/icon/avatar-01.jpg" alt="John Doe" />
                                                     </a>
                                                 </div>
                                                 <div class="content">
@@ -395,226 +388,188 @@
             <div class="main-content">
                 <div class="section__content section__content--p30">
                     <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="overview-wrap">
-                                    <h2 class="title-1">All Bids.</h2>
-                                    <form class="form-header" action="" method="POST">
-                                <input class="au-input au-input--xl" type="text" name="search" placeholder="Search for bids"/>
-                                <button class="au-btn--submit" type="submit">
-                                    <i class="zmdi zmdi-search"></i>
-                                </button>
-                            </form>
-                                </div>
-                            </div>
-                        </div>
-            <section class="p-t-20">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">                            
-                            <div class="table-data__tool">
-                                <div class="table-data__tool-left">
-                                    <div class="rs-select2--light rs-select2--md">
-									     <p>Number Of Bids.</p>
-                                        <select class="js-select2 success" name="property">
-                                            <option selected="selected">Select.</option>
-                                            <option value="approved">>10.</option>.</option>
-                                            <option value="reassigned">>20.</option>.</option>
-											    <option value="finished">>30</option>.</option>
-                                            <option value="pending"> < 10.</option>
-                                        </select>
-                                        <div class="dropDownSelect2"></div>
-                                    </div>
-                                    <div class="rs-select2--light rs-select2--sm">
-									      <p>Time.</p>
-                                        <select class="js-select2" name="time">
-                                            <option selected="selected">Today</option>
-                                            <option value="3">3 Days</option>
-                                            <option value="week">1 Week</option>
-                                        </select>
-                                        <div class="dropDownSelect2"></div>
-                                    </div>
-                                    <button class="au-btn-filter btn btn-danger ">
-                                        <i class="zmdi zmdi-filter-list"></i>filter</button>
-                                </div>                                
-                            </div>
-									                <div class="col-md-10 offset-md-1">
-							 <h3 class="title-5 m-b-35">Bids Made Per Order.</h3>
-                                <div class="au-card au-card--bg-blue au-card-top-countries m-b-30">
-                                    <div class="au-card-inner">
-                                        <div class="table-responsive">
-                                            <table class="table table-top-countries">
-											      <thead>
-												    <tr style = "color:white;">
-													   <th>Order Id.</th>
-													   <th class="text-right">Order Track Number.</th>
-													   <th class="text-right">Date Posted.</th>
-													   <th class="text-right">Number Of Bids.</th>
-													   <th class="text-right">View Bidders.</th>
-													</tr>
-												  </thead>
-                                                <tbody>
-												        
-                                                    <tr>													
-                                                        <td>1465454</td>
-                                                        <td class="text-right">FZRGG45T44C5D</td>
-														     <td class="text-right">2-05-2016</td>
-															 <td class="text-right">45</td>	
-															 <td>
-															  <div class="table-data-feature">
-                                                         <a class="item" data-toggle="tooltip" data-placement="top" title="view" href = "#">
-                                                            <i class="zmdi zmdi-mail-send"></i>
-                                                         </a>
-														     </td>
-													     </div>
-                                                    </tr>
-													   
-   <tr>													
-                                                        <td>1465454</td>
-                                                        <td class="text-right">FZRGG45T44C5D</td>
-														     <td class="text-right">2-05-2016</td>
-															 <td class="text-right">45</td>	
-															 <td>
-															  <div class="table-data-feature">
-                                                         <button class="item" data-toggle="tooltip" data-placement="top" title="view">
-                                                            <i class="zmdi zmdi-mail-send"></i>
-                                                         </button>
-														     </td>
-													     </div>
-                                                    </tr>
-													   <tr>													
-                                                        <td>1465454</td>
-                                                        <td class="text-right">FZRGG45T44C5D</td>
-														     <td class="text-right">2-05-2016</td>
-															 <td class="text-right">45</td>	
-															 <td>
-															  <div class="table-data-feature">
-                                                         <button class="item" data-toggle="tooltip" data-placement="top" title="view">
-                                                            <i class="zmdi zmdi-mail-send"></i>
-                                                         </button>
-														     </td>
-													     </div>
-                                                    </tr>
-                                                </tbody>
-                                            </table>
+					       <div style = "text-align:center;">
+						        <h2 style = "color:blue;">Fill in the forms below to make an order.</h2>
+								<p style = "font-size: 14px">In this forms it is recomended that one part of the form must be correctly filled and submitted before we move to the next module.</p>
+								<br/>
+								<br/>
+						   </div>
+					           <div class = "row">
+					             <div class="col-lg-8 offset-lg-2">
+								    <div>
+									    <h4>Part A : Basic Information.</h4>
+									</div>
+                                <div class="card">
+                                    <div class="card-header" style = "text-align:center; font-family: 'Times New Roman'; color:black;"><b>FILL THE FORM TO MAKE AN ORDER.</b></div>
+                                    <div class="card-body card-block">
+									        <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label class=" form-control-label" style = "font-family:'Times New Roman'; color:black;"><b>UserName :</b></label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <p class="form-control-static">Username</p>
+                                                </div>
+                                           </div>
+										    <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label class=" form-control-label" style = "font-family:'Times New Roman'; color:black;"><b>Id .</b></label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <p class="form-control-static">id .</p>
+                                                </div>
+                                            </div>
+											 <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label class=" form-control-label" style = "font-family:'Times New Roman'; color:black;"><b>Full Names.</b></label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <p class="form-control-static"> names Here.</p>
+                                                </div>
+                                            </div>
+										<form action = "" method = "" class = "">
+										 <div class="card-body card-block">
+                                        <div class="form-group">
+                                            <label for="subject" class=" form-control-label" style = "font-family:'Times New Roman'; color:black;"><b>Subject :</b></label>
+                                            <input type="text" id="subject" placeholder="Enter the subject of the order." class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="numberOfPages" class=" form-control-label" style = "font-family:'Times New Roman'; color:black;"><b>Number Of Pages :</b></label>
+                                            <input type="number" id="numberOfPages" placeholder="enter the number of paes to be used ." class="form-control">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="formatToBeUsed" class=" form-control-label" style = "font-family:'Times New Roman'; color:black;"><b>Format To Be Used .</b></label>
+                                            <input type="text" id="formatToBeUsed." placeholder="Enter the Format To Be Used." class="form-control">
+                                        </div>                                        
+                                        <div class="form-group">
+                                            <label for="date" class=" form-control-label" style = "font-family:'Times New Roman'; color:black;"><b>Due Date .</b></label>
+                                            <input type="date" id="date" class="form-control">
+                                        </div>
+										 <div class="form-group">
+                                            <label for="description" class=" form-control-label" style = "font-family:'Times New Roman'; color:black;"><b>Order Description.</b></label>
+                                           <textarea name="description" id="description" rows="9" placeholder="Enter the description of the job to be carried out here that includes editing styles." class="form-control"></textarea>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-			   <p><i>Only Appears when the admin clicks on the particular order bid.</i></p>
-			    
-				<h3 class="title-5 m-b-35">Bids Made for Order : .</h3>
-			                        <div class="row">
-                            <div class="col-lg-12 offset-lg-0">
-                                <!-- USER DATA-->								
-                                <div class="user-data m-b-30">
-                                    <h3 class="title-3 m-b-30">
-                                        <i class="zmdi zmdi-account-calendar"></i>Order Bids .</h3>
-                                    <div class="filters m-b-45">
-                                        <div class="rs-select2--dark rs-select2--md m-r-10 rs-select2--border">
-                                            <select class="js-select2" name="property">
-                                                <option selected="selected">Level </option>
-                                                <option value="">Level 1</option>
-                                                <option value="">Level 2</option>                                                
-                                            </select>
-                                            <div class="dropDownSelect2"></div>
-                                        </div>
-                                        <div class="rs-select2--dark rs-select2--sm rs-select2--border">
-                                            <select class="js-select2 au-select-dark" name="time">
-                                                <option selected="selected">Time</option>
-                                                <option value="">From First Bid .</option>
-                                                <option value="">From Last Bid.</option>
-                                            </select>
-                                            <div class="dropDownSelect2"></div>
-                                        </div>
-										 <button class="au-btn-filter btn btn-danger ">
-                                        <i class="zmdi zmdi-filter-list"></i>filter</button>
-										
+										<div class="card-footer" style= "text-align:center;">
+									       <div class = "btn-group btn-group-lg btn-group-justified">
+                                        <button type="submit" class="btn btn-success btn-lg ">
+                                            <i class="fa fa-dot-circle-o"></i> Submit
+                                        </button>
+                                        <button type="reset" class="btn btn-warning btn-lg">
+                                            <i class="fa fa-ban"></i> Reset
+                                        </button>
+										</div>
                                     </div>
-                                    <div class="table-responsive table-data">
-                                        <table class="table">
-                                            <thead>
-                                                <tr>     
-                                                    <th>Order Id .</th>
-                                                    <th class="text-right">Track Number.</th>
-                                                    <th class="text-right">Writer Id.</th>
-                                                    <th class="text-right"> Writer Name.</th>
-														  <th class="text-right"> Writer level.</th>
-														  <th class="text-right">Bid Time .</th>
-														  <th class="text-right"> Price.</th>
-														  <th class="text-right">Assign.</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>                                                                                                      
-                                                    <td class="text-right">
-                                                        5135421
-                                                    </td>
-                                                    <td class="text-right">
-                                                        51564DD
-                                                    </td>
-                                                    <td class="text-right">
-                                                        44SJD85
-                                                    </td>
-													<td class="text-right"> George</td>
-													<td class="text-right"> Level 1</td>
-													<td class="text-right"> 25-01-2010 2:54:85</td>
-													<td class="text-right">$4.50</td>
-													<td class="text-right"><a href = "#"><input type = "button" class = "btn btn-success" value = "ASSIGN"/></a></td>
-                                                </tr>
-												 <tr>                                                                                                      
-                                                    <td class="text-right">
-                                                        5135421
-                                                    </td>
-                                                    <td class="text-right">
-                                                        51564DD
-                                                    </td>
-                                                    <td class="text-right">
-                                                        44SJD85
-                                                    </td>
-													<td class="text-right"> George</td>
-													<td class="text-right"> Level 1</td>
-													<td class="text-right"> 25-01-2010 2:54:85</td>
-													<td class="text-right">$4.50</td>
-													<td class="text-right"><a href = "#"><input type = "button" class = "btn btn-success" value = "ASSIGN"/></a></td>
-                                                </tr>
-												 <tr>                                                                                                      
-                                                    <td class="text-right">
-                                                        5135421
-                                                    </td>
-                                                    <td class="text-right">
-                                                        51564DD
-                                                    </td>
-                                                    <td class="text-right">
-                                                        44SJD85
-                                                    </td>
-													<td class="text-right"> George</td>
-													<td class="text-right"> Level 1</td>
-													<td class="text-right"> 25-01-2010 2:54:85</td>
-													<td class="text-right">$4.50</td>
-													<td class="text-right"><a href = "#"><input type = "button" class = "btn btn-success" value = "ASSIGN"/></a></td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>                                  
-                                </div>
-                                <!-- END USER DATA-->
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <div class="copyright">
-                                    <p>Copyright © 2018 . All rights reserved.</p>
+									</form>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-						
-                    </div>
-                </div>
+							</div>
+							
+					</div>
+										           <div class = "row">
+					             <div class="col-lg-8 offset-lg-2">
+								    <div>
+									    <h4>Part B : Additional Material.</h4>
+									</div>
+                                <div class="card">
+                                    <div class="card-header" style = "text-align:center; font-family: 'Times New Roman'; color:black;"><b>UPLOAD ANY DOCUMENTS TO BE USED FOR THE ORDER.</b></div>
+                                    <div class="card-body card-block">									        
+										<form action = "" method = "" class = "">
+										 <div class="card-body card-block">
+                                   <div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="file-multiple-input" class=" form-control-label" style = "font-family:'Times New Roman'; color:black;"><b>Supporting Documentation.</b></label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="file" id="file-multiple-input" name="file-multiple-input" multiple="" class="form-control-file" style = "color:green;">
+                                                </div>
+                                            </div>
+											<div class="row form-group">
+                                                <div class="col col-md-3">
+                                                    <label for="file-multiple-input" class=" form-control-label" style = "font-family:'Times New Roman'; color:black;"><b>Referces.</b></label>
+                                                </div>
+                                                <div class="col-12 col-md-9">
+                                                    <input type="file" id="file-multiple-input" name="file-multiple-input" multiple="" class="form-control-file" style = "color:green;">
+                                                </div>
+                                            </div>
+                                    </div>
+									<div class="card-footer" style= "text-align:center;">
+									       <div class = "btn-group btn-group-lg btn-group-justified">
+                                        <button type="submit" class="btn btn-success btn-lg ">
+                                            <i class="fa fa-dot-circle-o"></i> Submit
+                                        </button>
+                                        <button type="reset" class="btn btn-warning btn-lg">
+                                            <i class="fa fa-ban"></i> Reset
+                                        </button>
+										</div>
+                                    </div>
+									</form>
+                                    </div>
+                                </div>
+                            </div>
+							</div>
+							                        <div class="row">
+                            <div class="col-lg-8 offset-lg-2">
+							 <div>
+									    <h4>Part C : Payments.</h4>
+									</div>
+                                <div class="card">
+                                    <div class="card-header" style = "font-family:'Times New Roman'; color:black; text-align:center;"><b>Credit Card</b></div>
+                                    <div class="card-body">
+                                        <div class="card-title"  style = "font-family:'Times New Roman'; color:black; text-align:center;">
+                                            <h3 class="text-center title-2"><b>Pay Invoice</b></h3>
+                                        </div>
+                                        <hr>
+                                        <form action="" method="post" novalidate="novalidate">
+                                            <div class="form-group">
+                                                <label for="cc-payment" class="control-label mb-1"  style = "font-family:'Times New Roman'; color:black; text-align:center;text-decoration:bold;"><b>Payment amount</b></label>
+                                                <input id="cc-pament" name="cc-payment" type="text" class="form-control" aria-required="true" aria-invalid="false" value="100.00">
+                                            </div>
+                                            <div class="form-group has-success">
+                                                <label for="cc-name" class="control-label mb-1"  style = "font-family:'Times New Roman'; color:black; text-align:center;text-decoration:bold;"><b>Name on card</b></label>
+                                                <input id="cc-name" name="cc-name" type="text" class="form-control cc-name valid" data-val="true" data-val-required="Please enter the name on card"
+                                                    autocomplete="cc-name" aria-required="true" aria-invalid="false" aria-describedby="cc-name-error">
+                                                <span class="help-block field-validation-valid" data-valmsg-for="cc-name" data-valmsg-replace="true"></span>
+                                            </div>
+                                            <div class="form-group">
+                                                <label for="cc-number" class="control-label mb-1"  style = "font-family:'Times New Roman'; color:black; text-align:center;text-decoration:bold;"><b>Card number</b></label>
+                                                <input id="cc-number" name="cc-number" type="tel" class="form-control cc-number identified visa" value="" data-val="true"
+                                                    data-val-required="Please enter the card number" data-val-cc-number="Please enter a valid card number"
+                                                    autocomplete="cc-number">
+                                                <span class="help-block" data-valmsg-for="cc-number" data-valmsg-replace="true"></span>
+                                            </div>
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label for="cc-exp" class="control-label mb-1"  style = "font-family:'Times New Roman'; color:black; text-align:center;text-decoration:bold;"><b>Expiration</b></label>
+                                                        <input id="cc-exp" name="cc-exp" type="tel" class="form-control cc-exp" value="" data-val="true" data-val-required="Please enter the card expiration"
+                                                            data-val-cc-exp="Please enter a valid month and year" placeholder="MM / YY"
+                                                            autocomplete="cc-exp">
+                                                        <span class="help-block" data-valmsg-for="cc-exp" data-valmsg-replace="true"></span>
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <label for="x_card_code" class="control-label mb-1"  style = "font-family:'Times New Roman'; color:black; text-align:center; text-decoration:bold;"><b>Security code</b></label>
+                                                    <div class="input-group">
+                                                        <input id="x_card_code" name="x_card_code" type="tel" class="form-control cc-cvc" value="" data-val="true" data-val-required="Please enter the security code"
+                                                            data-val-cc-cvc="Please enter a valid security code" autocomplete="off">
+
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div>
+                                                <button id="payment-button" type="submit" class="btn btn-lg btn-info btn-block">
+                                                    <i class="fa fa-lock fa-lg"></i>&nbsp;
+                                                    <span id="payment-button-amount">Pay $100.00</span>
+                                                    <span id="payment-button-sending" style="display:none;">Sending…</span>
+                                                </button>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+					</div>
+               </div>
             </div>
             <!-- END MAIN CONTENT-->
             <!-- END PAGE CONTAINER-->

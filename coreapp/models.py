@@ -52,22 +52,24 @@ class Status(models.Model):
 
 #  Order's table
 class Order(models.Model):
-    client = models.ForeignKey(Client, on_delete=models.CASCADE, related_name="orders")
+    client = models.ForeignKey(Client, default=1, on_delete=models.CASCADE, related_name="orders")
     writer = models.ForeignKey(User, blank=True,null=True, on_delete=models.CASCADE, related_name="orders")
     order_topic = models.CharField(max_length=200, blank=True)
     order_description = models.TextField(blank=True)
-    track_number = models.IntegerField()
+    track_number = models.IntegerField(blank=True,null=True,)
     status=models.ForeignKey(Status, default=1, on_delete=models.CASCADE, related_name="status")
-    date_created = models.DateTimeField()
-    deadline = models.DateTimeField()
-    pages = models.IntegerField()
+    date_created = models.DateTimeField(blank=True,null=True,)
+    deadline = models.DateTimeField(blank=True,null=True,)
+    pages = models.IntegerField(blank=True,null=True,)
     price = models.IntegerField(default='50')
-    words = models.IntegerField()
+    words = models.IntegerField(default='50')
     order_files = models.CharField(max_length=200, blank=True)
 
+
     def publish(self):
-        self.published_date = timezone.now()
+        self.date_created = timezone.now()
         self.save()
+
 
     def __str__(self):
         return self.order_topic

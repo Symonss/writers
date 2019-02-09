@@ -316,6 +316,11 @@ section {
         padding-top: 50px;
     }
 }
+@media (min-width: 991px) {
+    .headerAdjust{
+		margin-top:-60px;
+	}
+}
 
 .page-content--bgf7 {
     background: #f7f7f7;
