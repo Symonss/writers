@@ -1,20 +1,31 @@
-{% extends 'base.html' %}
-<style>
-body,h1 {font-family: "Raleway", sans-serif}
-body, html {height: 100%}
-.bgimg {
-  background-image: url('https://www.creativelive.com/blog/wp-content/uploads/2016/06/43-Ways-to-Find-the-Best-Book-Idea-for-a-New-Writer-620x413.jpg');
-  min-height: 100%;
-  background-position: center;
-  background-size: cover;
-}
-</style>
+{% extends 'base.html' %}{% load static %}
 
 {% block content %}
+<div class="body">
+
+  <!-- second part  -->
+  <div class=" container text-center">
+    <h1 class="font-weight-bolder">Find the Best Writer for your Essay</h1>
+    <p>Post your orders and we'll match it with best writter for you,with best price offers</p>
+    <img src="{% static 'images/process.png'%}" class="mx-auto d-block">
+
+  </div>
+
+  <div class="row">
+    <div class="col-sm-3" style="background-color:lavender;">123 Jobs Done</div>
+    <div class="col-sm-3" style="background-color:lavenderblush;">67 writers online</div>
+    <div class="col-sm-3" style="background-color:lavender;">500 registered users</div>
+    <div class="col-sm-3" style="background-color:lavenderblush;">78 writers</div>
+  </div>
+
+  {% endblock %}
+
   <h2>Welcome to Pen Work Research! <span class="icon-emo-happy"></span></h2>
   <p class="lead">
-    If you already have an account, go ahead and <a href="{% url 'login' %}">log in</a>. If you are new to Pen Work Research, get started
-    by creating a <a href="{% url 'client_signup' %}">Client</a> or a <a href="{% url 'writer_signup' %}">Writer account</a>.
+    If you already have an account, go ahead and <a href="{% url 'login' %}">log in</a>. If you are new to Pen Work
+    Research, get started
+    by creating a <a href="{% url 'client_signup' %}">Client</a> or a <a href="{% url 'writer_signup' %}">Writer
+      account</a>.
     or a <a href="{% url 'sub_admin_signup' %}">Assistant Admin</a>or a <a href="{% url 'admin_signup' %}">Admin</a>
   </p>
   <hr>
@@ -28,17 +39,16 @@ body, html {height: 100%}
 
 
 
-<div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-  <div class="w3-display w3-teal w3-padding-large w3-xlarge">
-    Pen Work Research
+  <div class="bgimg w3-display-container w3-animate-opacity w3-text-white">
+    <div class="w3-display w3-teal w3-padding-large w3-xlarge">
+      Pen Work Research
+    </div>
+    <div class="w3-display">
+      <h1 class="w3-jumbo w3-text-teal w3-animate-top">COMING SOON</h1>
+      <hr class="w3-border-red" style="margin:auto;width:40%">
+      <p class="w3-xlarge w3-text-teal w3-center"><b>29 days left</b></p>
+    </div>
+    <div class="w3-display-bottomleft w3-padding-large">
+      Made By <a href="#" target="_blank">RSGG</a>
+    </div>
   </div>
-  <div class="w3-display">
-    <h1 class="w3-jumbo w3-text-teal w3-animate-top">COMING SOON</h1>
-    <hr class="w3-border-red" style="margin:auto;width:40%">
-    <p class="w3-xlarge w3-text-teal w3-center"><b>29 days left</b></p>
-  </div>
-  <div class="w3-display-bottomleft w3-padding-large">
-    Made By <a href="#" target="_blank">RSGG</a>
-  </div>
-</div>
-{% endblock %}
