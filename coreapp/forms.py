@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.db import transaction
 from django.forms.utils import ValidationError
 from django import forms
+
 from coreapp.models import  (User, Client, Admin, SubAdmin, Order)
 
 class WriterSignUpForm(UserCreationForm):
@@ -55,3 +56,9 @@ class AdminSignUpForm(UserCreationForm):
         user.save()
         admin = Admin.objects.create(user=user)
         return user
+
+
+class DocumentForm(forms.ModelForm):
+    class Meta:
+        model = Order
+        fields = ('__all__')

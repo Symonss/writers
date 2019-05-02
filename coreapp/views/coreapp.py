@@ -7,11 +7,14 @@ from ..decorators import admin_required, client_required
 class SignUpView(TemplateView):
     template_name = 'registration/signup.html'
 
+def index(request):
+
+    return render(request, 'coreapp/home.html')
 
 def home(request):
     if request.user.is_authenticated:
         if request.user.is_client:
-            return redirect('clients:clients_dashboard')
+            return redirect('index')
         elif request.user.is_admin:
                 return redirect('admins:admins_dashboard')
         elif request.user.is_sub_admin:

@@ -63,7 +63,7 @@ class Order(models.Model):
     pages = models.IntegerField(blank=True,null=True,)
     price = models.IntegerField(default='50')
     words = models.IntegerField(default='50')
-    order_files = models.CharField(max_length=200, blank=True)
+    document = models.FileField(upload_to='order_documents/' , blank=True,null=True,)
 
 
     def publish(self):

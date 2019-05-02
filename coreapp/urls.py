@@ -1,5 +1,7 @@
 # from django.urls import path
 # from . import views
+from django.conf import settings
+from django.conf.urls.static import static
 #
 # urlpatterns = [
 #     path('', views.home_page, name='home_page'),
@@ -11,12 +13,16 @@ from django.urls import include, path
 from .views import coreapp, clients, admins, writers, sub_admin
 
 urlpatterns = [
-    path('', coreapp.home, name='home'),
+    path('', coreapp.index, name='index'),
+    path('home', coreapp.home, name='home'),
+    
     # path('create', coreapp.create_order, name='create_order'),
+    
 
     path('clients/', include(([
         path('order/create/', clients.OrderCreate.as_view(), name='order_create'),
-        path('', clients.ClientDashboardView.as_view(), name='clients_dashboard'),
+        path('form/upload/', clients.model_form_upload, name= 'upload'),
+        path('clients/dashboard', clients.ClientDashboardView.as_view(), name='clients_dashboard'),
         path('order/<int:pk>/update/', clients.OrderUpdate.as_view(), name='order_update'),
         path('order/<int:pk>/delete/', clients.OrderDelete.as_view(), name='order_delete'),
 
@@ -54,3 +60,6 @@ urlpatterns = [
         # path('quiz/<int:quiz_pk>/question/<int:question_pk>/delete/', teachers.QuestionDeleteView.as_view(), name='question_delete'),
     ], 'coreapp'), namespace='writers')),
 ]
+
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

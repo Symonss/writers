@@ -1,0 +1,7 @@
+{
+    "editor.fontSize": 20,
+    "editor.fontWeight": "bold",
+    "editor.formatOnPaste": true,
+    "editor.formatOnSave": true,
+    "editor.tabCompletion": "on"
+}

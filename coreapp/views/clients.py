@@ -5,6 +5,7 @@ from django.db import transaction
 from django.db.models import Count
 from django.shortcuts import get_object_or_404, redirect, render
 from django.urls import reverse_lazy
+from ..forms import DocumentForm
 from django.utils.decorators import method_decorator
 from django.views.generic import CreateView, ListView, UpdateView, DeleteView
 
@@ -24,7 +25,7 @@ class ClientSignUpView(CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        return redirect('clients:clients_dashboard')
+        return redirect('coreapp/home.html')
 
 @method_decorator([login_required, client_required], name='dispatch')
 class ClientDashboardView(ListView):
@@ -49,4 +50,17 @@ class OrderUpdate(UpdateView):
 
 class OrderDelete(DeleteView):
     model = Order
-    success_url = reverse_lazy('home')
+    success_url = reverse_lazy('index')
+
+
+def model_form_upload(request):
+    if request.method == 'POST':
+        form = DocumentForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('index')
+    else:
+        form = DocumentForm()
+    return render(request, 'coreapp/model_form_upload.html', {
+        'form': form
+    })

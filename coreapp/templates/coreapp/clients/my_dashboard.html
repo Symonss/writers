@@ -1,4 +1,5 @@
-{% load static %}<!DOCTYPE html>
+{% load static %}
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -23,7 +24,8 @@
 
     <!-- Vendor CSS-->
     <link href="../../static/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
-    <link href="../../static/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="../../static/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet"
+        media="all">
     <link href="../../static/vendor/wow/animate.css" rel="stylesheet" media="all">
     <link href="../../static/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
     <link href="../../static/vendor/slick/slick.css" rel="stylesheet" media="all">
@@ -43,7 +45,7 @@
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="index.html">
-                            <h2 style = "color:blue;">CLIENT PANEL .</h2>
+                            <h2 style="color:blue;">CLIENT PANEL .</h2>
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -158,22 +160,22 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo">
                 <a href="#">
-                   <h4 style = "color:blue;"><span class = "fas fa-user">   </span> CLIENT PANEL.</h4>
+                    <h4 style="color:blue;"><span class="fas fa-user"> </span> CLIENT PANEL.</h4>
                 </a>
             </div>
-			<div class="account2">
-                    <div class="image img-cir img-120">
-                        <img src="../../static/images/icon/avatar-big-01.jpg" alt="{{request.user.username}}" />
-                    </div>
-                    <h4 class="name">{{request.user.username}}</h4>
-                    <a href="{% url 'logout' %}">Sign out</a>
+            <div class="account2">
+                <div class="image img-cir img-120">
+                    <img src="../../static/images/icon/avatar-big-01.jpg" alt="{{request.user.username}}" />
                 </div>
+                <h4 class="name">{{request.user.username}}</h4>
+                <a href="{% url 'logout' %}">Sign out</a>
+            </div>
             <div class="menu-sidebar__content js-scrollbar1">
                 <nav class="navbar-sidebar">
 
                     <ul class="list-unstyled navbar__list">
                         <li class="active has-sub">
-                            <a class="js-arrow" href="#">
+                            <a class="js-arrow" href="{% url 'index'%}">
                                 <i class="fas fa-tachometer-alt"></i>Home .</a>
                         </li>
 
@@ -181,15 +183,15 @@
                             <a href="{% url 'clients:order_create' %}">
                                 <i class="fas fa-eye"></i>Place Order.</a>
                         </li>
-						<li>
+                        <li>
                             <a href="manageOrders.html">
                                 <i class="fas fas fa-eye"></i>Manage Orders.</a>
                         </li>
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-comment"></i>Message Board.<span class="arrow">
-                                         <i class="fas fa-angle-down"></i>
-                                    </span></a>
+                                    <i class="fas fa-angle-down"></i>
+                                </span></a>
 
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
                                 <li>
@@ -200,11 +202,11 @@
                                 </li>
                             </ul>
                         </li>
-						<li>
+                        <li>
                             <a href="#">
                                 <i class="fas fa-user"></i>Account.</a>
                         </li>
-						 <li>
+                        <li>
                             <a href="{% url 'logout' %}">
                                 <i class="fas fa-sign-out-alt"></i>Sign Out .</a>
                         </li>
@@ -346,7 +348,8 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="../../static/images/icon/avatar-01.jpg" alt="{{request.user.username}}" />
+                                                        <img src="../../static/images/icon/avatar-01.jpg"
+                                                            alt="{{request.user.username}}" />
                                                     </a>
                                                 </div>
                                                 <div class="content">
@@ -399,195 +402,204 @@
                         </div>
                         <div class="row m-t-25">
                             <div class="col-sm-6 col-lg-3">
-							   <a href = "{% url 'clients:order_create' %}">
-                                <div class="overview-item overview-item--c1">
-                                    <div class="overview__inner">
-                                        <div class="overview-box clearfix">
-                                            <div class="icon">
-                                                <i class="zmdi zmdi-account-o"></i>
+                                <a href="{% url 'clients:order_create' %}">
+                                    <div class="overview-item overview-item--c1">
+                                        <div class="overview__inner">
+                                            <div class="overview-box clearfix">
+                                                <div class="icon">
+                                                    <i class="zmdi zmdi-account-o"></i>
+                                                </div>
+                                                <div class="text">
+                                                    <h2>Place Order.</h2>
+                                                </div>
                                             </div>
-                                            <div class="text">
-                                                <h2>Place Order.</h2>
-                                            </div>
-                                        </div>
 
+                                        </div>
                                     </div>
-                                </div>
-								</a>
+                                </a>
                             </div>
                             <div class="col-sm-6 col-lg-3">
-							       <a href = "manageOrders.html">
-                                <div class="overview-item overview-item--c2">
-                                    <div class="overview__inner">
-                                        <div class="overview-box clearfix">
-                                            <div class="icon">
-                                                <i class="zmdi zmdi-shopping-cart-add"></i>
+                                <a href="manageOrders.html">
+                                    <div class="overview-item overview-item--c2">
+                                        <div class="overview__inner">
+                                            <div class="overview-box clearfix">
+                                                <div class="icon">
+                                                    <i class="zmdi zmdi-shopping-cart-add"></i>
+                                                </div>
+                                                <div class="text">
+                                                    <h2>Manage Orders .</h2>
+                                                </div>
                                             </div>
-                                            <div class="text">
-                                                <h2>Manage Orders .</h2>
-                                            </div>
-                                        </div>
 
+                                        </div>
                                     </div>
-                                </div>
-								</a>
+                                </a>
                             </div>
 
-						 <div class="col-sm-6 col-lg-3">
-							<a href = "inbox.html">
-                                <div class="overview-item overview-item--c4">
-                                    <div class="overview__inner">
-                                        <div class="overview-box clearfix">
-                                            <div class="icon ">
-                                                <i class="zmdi zmdi-comment-text"></i>
+                            <div class="col-sm-6 col-lg-3">
+                                <a href="inbox.html">
+                                    <div class="overview-item overview-item--c4">
+                                        <div class="overview__inner">
+                                            <div class="overview-box clearfix">
+                                                <div class="icon ">
+                                                    <i class="zmdi zmdi-comment-text"></i>
+                                                </div>
+                                                <div class="text">
+                                                    <h2>Message Board.</h2>
+                                                </div>
                                             </div>
-                                            <div class="text">
-                                                <h2>Message Board.</h2>
-                                            </div>
-                                        </div>
 
+                                        </div>
                                     </div>
-                                </div>
-								</a>
+                                </a>
                             </div>
                         </div>
-            <section class="p-t-20">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <h3 class="title-5 m-b-35">All Orders .</h3>
-                            <div class="table-data__tool">
-                                <div class="table-data__tool-left">
-                                    <div class="rs-select2--light rs-select2--md">
-									     <p>Status.</p>
-                                        <select class="js-select2 success" name="property">
-                                            <option selected="selected">Status.</option>
-                                            <option value="approved">Approved.</option>
-                                            <option value="reassigned">Reassigned.</option>
-											    <option value="finished">Finished.</option>
-                                            <option value="pending">Pending.</option>
-                                        </select>
-                                        <div class="dropDownSelect2"></div>
+                        <section class="p-t-20">
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h3 class="title-5 m-b-35">All Orders .</h3>
+                                        <div class="table-data__tool">
+                                            <div class="table-data__tool-left">
+                                                <div class="rs-select2--light rs-select2--md">
+                                                    <p>Status.</p>
+                                                    <select class="js-select2 success" name="property">
+                                                        <option selected="selected">Status.</option>
+                                                        <option value="approved">Approved.</option>
+                                                        <option value="reassigned">Reassigned.</option>
+                                                        <option value="finished">Finished.</option>
+                                                        <option value="pending">Pending.</option>
+                                                    </select>
+                                                    <div class="dropDownSelect2"></div>
+                                                </div>
+                                                <div class="rs-select2--light rs-select2--sm">
+                                                    <p>Time.</p>
+                                                    <select class="js-select2" name="time">
+                                                        <option selected="selected">Today</option>
+                                                        <option value="3">3 Days</option>
+                                                        <option value="week">1 Week</option>
+                                                    </select>
+                                                    <div class="dropDownSelect2"></div>
+                                                </div>
+                                                <button class="au-btn-filter btn btn-danger">
+                                                    <i class="zmdi zmdi-filter-list"></i>filter</button>
+                                            </div>
+                                        </div>
+                                        <div class="table-responsive table--no-card m-b-30">
+                                            <table class="table table-borderless table-striped table-earning">
+                                                <thead>
+                                                    <tr>
+                                                        <th>S<sub>no</sub></th>
+                                                        <th>Order Id.</th>
+                                                        <th>Track Number.</th>
+                                                        <th class="text-right">Id</th>
+                                                        <th class="text-right">Name.</th>
+                                                        <th class="text-right">Subject</th>
+                                                        <th class="text-right">N<sub>o</sub>Pages</th>
+                                                        <th class="text-right">Status.</th>
+                                                        <th class="text-right">Date Created</th>
+                                                        <th class="text-right">Date Due.</th>
+                                                        <th class="text-right">Time Left.</th>
+                                                        <th class="text-right">Actions.</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td>153451</td>
+                                                        <td>5745468FFDSFD</td>
+                                                        <td>8464F4F8RF484DD</td>
+                                                        <td class="text-right">564654</td>
+                                                        <td class="text-right">SOmbiri</td>
+                                                        <td class="text-right">Django.</td>
+                                                        <td class="text-right">8</td>
+                                                        <td class="text-right">Pending.</td>
+                                                        <td class="text-right">7-9-2015.</td>
+                                                        <td class="text-right">14-9-2015.</td>
+                                                        <td class="text-right">7.</td>
+                                                        <td>
+                                                            <div class="table-data-feature">
+                                                                <button class="item" data-toggle="tooltip"
+                                                                    data-placement="top" title="Edit">
+                                                                    <i class="zmdi zmdi-edit"></i>
+                                                                </button>
+                                                                <button class="item" data-toggle="tooltip"
+                                                                    data-placement="top" title="Message.">
+                                                                    <i class="zmdi zmdi-comment-text"></i>
+                                                                </button>
+                                                                <button class="item" data-toggle="tooltip"
+                                                                    data-placement="top" title="More">
+                                                                    <i class="zmdi zmdi-more"></i>
+                                                                </button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>151</td>
+                                                        <td>57454DSFD</td>
+                                                        <td>F8RF484DD</td>
+                                                        <td class="text-right">564654</td>
+                                                        <td class="text-right">RNgode</td>
+                                                        <td class="text-right">Expert Systems.</td>
+                                                        <td class="text-right">8</td>
+                                                        <td class="text-right">Approved.</td>
+                                                        <td class="text-right">12-9-2015.</td>
+                                                        <td class="text-right">14-9-2015.</td>
+                                                        <td class="text-right">3.</td>
+                                                        <td>
+                                                            <div class="table-data-feature">
+                                                                <button class="item" data-toggle="tooltip"
+                                                                    data-placement="top" title="Edit">
+                                                                    <i class="zmdi zmdi-edit"></i>
+                                                                </button>
+                                                                <button class="item" data-toggle="tooltip"
+                                                                    data-placement="top" title="Message.">
+                                                                    <i class="zmdi zmdi-comment-text"></i>
+                                                                </button>
+                                                                <button class="item" data-toggle="tooltip"
+                                                                    data-placement="top" title="More">
+                                                                    <i class="zmdi zmdi-more"></i>
+                                                                </button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td>1</td>
+                                                        <td>5SFD</td>
+                                                        <td>4DD8464F4F8RF48</td>
+                                                        <td class="text-right">54</td>
+                                                        <td class="text-right">RGaucho</td>
+                                                        <td class="text-right">Laravel.</td>
+                                                        <td class="text-right">12</td>
+                                                        <td class="text-right">Finished.</td>
+                                                        <td class="text-right">31-9-2015.</td>
+                                                        <td class="text-right">14-10-2015.</td>
+                                                        <td class="text-right">14.</td>
+                                                        <td>
+                                                            <div class="table-data-feature">
+                                                                <button class="item" data-toggle="tooltip"
+                                                                    data-placement="top" title="Edit">
+                                                                    <i class="zmdi zmdi-edit"></i>
+                                                                </button>
+                                                                <button class="item" data-toggle="tooltip"
+                                                                    data-placement="top" title="Message.">
+                                                                    <i class="zmdi zmdi-comment-text"></i>
+                                                                </button>
+                                                                <button class="item" data-toggle="tooltip"
+                                                                    data-placement="top" title="More">
+                                                                    <i class="zmdi zmdi-more"></i>
+                                                                </button>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
                                     </div>
-                                    <div class="rs-select2--light rs-select2--sm">
-									      <p>Time.</p>
-                                        <select class="js-select2" name="time">
-                                            <option selected="selected">Today</option>
-                                            <option value="3">3 Days</option>
-                                            <option value="week">1 Week</option>
-                                        </select>
-                                        <div class="dropDownSelect2"></div>
-                                    </div>
-                                    <button class="au-btn-filter btn btn-danger">
-                                        <i class="zmdi zmdi-filter-list"></i>filter</button>
                                 </div>
                             </div>
-                                            <div class="table-responsive table--no-card m-b-30">
-                                    <table class="table table-borderless table-striped table-earning">
-                                        <thead>
-                                            <tr>
-                                                <th>S<sub>no</sub></th>
-                                                <th>Order Id.</th>
-                                                <th>Track Number.</th>
-                                                <th class="text-right">Id</th>
-                                                <th class="text-right">Name.</th>
-                                                <th class="text-right">Subject</th>
-												     <th class="text-right">N<sub>o</sub>Pages</th>
-													 <th class="text-right">Status.</th>
-													 <th class="text-right">Date Created</th>
-													 <th class="text-right">Date Due.</th>
-													 <th class="text-right">Time Left.</th>
-													 <th class="text-right">Actions.</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>153451</td>
-                                                <td>5745468FFDSFD</td>
-                                                <td>8464F4F8RF484DD</td>
-                                                <td class="text-right">564654</td>
-                                                <td class="text-right">SOmbiri</td>
-                                                <td class="text-right">Django.</td>
-												     <td class="text-right">8</td>
-													 <td class="text-right">Pending.</td>
-													 <td class="text-right">7-9-2015.</td>
-													 <td class="text-right">14-9-2015.</td>
-													 <td class="text-right">7.</td>
-													 <td>
-                                                <div class="table-data-feature">
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                        <i class="zmdi zmdi-edit"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Message.">
-                                                        <i class="zmdi zmdi-comment-text"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                        <i class="zmdi zmdi-more"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                            </tr>
-<tr>
-                                                <td>151</td>
-                                                <td>57454DSFD</td>
-                                                <td>F8RF484DD</td>
-                                                <td class="text-right">564654</td>
-                                                <td class="text-right">RNgode</td>
-                                                <td class="text-right">Expert Systems.</td>
-												     <td class="text-right">8</td>
-													 <td class="text-right">Approved.</td>
-													 <td class="text-right">12-9-2015.</td>
-													 <td class="text-right">14-9-2015.</td>
-													 <td class="text-right">3.</td>
-													 <td>
-                                               <div class="table-data-feature">
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                        <i class="zmdi zmdi-edit"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Message.">
-                                                        <i class="zmdi zmdi-comment-text"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                        <i class="zmdi zmdi-more"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                            </tr>
-                                           <tr>
-                                                <td>1</td>
-                                                <td>5SFD</td>
-                                                <td>4DD8464F4F8RF48</td>
-                                                <td class="text-right">54</td>
-                                                <td class="text-right">RGaucho</td>
-                                                <td class="text-right">Laravel.</td>
-												     <td class="text-right">12</td>
-													 <td class="text-right">Finished.</td>
-													 <td class="text-right">31-9-2015.</td>
-													 <td class="text-right">14-10-2015.</td>
-													 <td class="text-right">14.</td>
-													 <td>
-                                                <div class="table-data-feature">
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Edit">
-                                                        <i class="zmdi zmdi-edit"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="Message.">
-                                                        <i class="zmdi zmdi-comment-text"></i>
-                                                    </button>
-                                                    <button class="item" data-toggle="tooltip" data-placement="top" title="More">
-                                                        <i class="zmdi zmdi-more"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-							<h3 class="title-5 m-b-35">Message Boards.</h3>
-                        <div class="row" style = "padding-top: 20px">
+                        </section>
+                        <h3 class="title-5 m-b-35">Message Boards.</h3>
+                        <div class="row" style="padding-top: 20px">
 
                             <div class="col-lg-6">
                                 <div class="au-card au-card--no-shadow au-card--no-pad m-b-40">
@@ -684,7 +696,8 @@
                                                         <div class="au-message__item-text">
                                                             <div class="avatar-wrap">
                                                                 <div class="avatar">
-                                                                    <img src="../../static/images/icon/avatar-02.jpg" alt="John Smith">
+                                                                    <img src="../../static/images/icon/avatar-02.jpg"
+                                                                        alt="John Smith">
                                                                 </div>
                                                             </div>
                                                             <div class="text">
@@ -702,7 +715,8 @@
                                                         <div class="au-message__item-text">
                                                             <div class="avatar-wrap online">
                                                                 <div class="avatar">
-                                                                    <img src="../../static/images/icon/avatar-03.jpg" alt="Nicholas Martinez">
+                                                                    <img src="../../static/images/icon/avatar-03.jpg"
+                                                                        alt="Nicholas Martinez">
                                                                 </div>
                                                             </div>
                                                             <div class="text">
@@ -720,7 +734,8 @@
                                                         <div class="au-message__item-text">
                                                             <div class="avatar-wrap online">
                                                                 <div class="avatar">
-                                                                    <img src="../../static/images/icon/avatar-04.jpg" alt="Michelle Sims">
+                                                                    <img src="../../static/images/icon/avatar-04.jpg"
+                                                                        alt="Michelle Sims">
                                                                 </div>
                                                             </div>
                                                             <div class="text">
@@ -738,7 +753,8 @@
                                                         <div class="au-message__item-text">
                                                             <div class="avatar-wrap">
                                                                 <div class="avatar">
-                                                                    <img src="../../static/images/icon/avatar-05.jpg" alt="Michelle Sims">
+                                                                    <img src="../../static/images/icon/avatar-05.jpg"
+                                                                        alt="Michelle Sims">
                                                                 </div>
                                                             </div>
                                                             <div class="text">
@@ -756,7 +772,8 @@
                                                         <div class="au-message__item-text">
                                                             <div class="avatar-wrap online">
                                                                 <div class="avatar">
-                                                                    <img src="../../static/images/icon/avatar-04.jpg" alt="Michelle Sims">
+                                                                    <img src="../../static/images/icon/avatar-04.jpg"
+                                                                        alt="Michelle Sims">
                                                                 </div>
                                                             </div>
                                                             <div class="text">
@@ -774,7 +791,8 @@
                                                         <div class="au-message__item-text">
                                                             <div class="avatar-wrap">
                                                                 <div class="avatar">
-                                                                    <img src="images/icon/avatar-05.jpg" alt="Michelle Sims">
+                                                                    <img src="images/icon/avatar-05.jpg"
+                                                                        alt="Michelle Sims">
                                                                 </div>
                                                             </div>
                                                             <div class="text">
@@ -813,8 +831,10 @@
                                                             <img src="images/icon/avatar-02.jpg" alt="John Smith">
                                                         </div>
                                                         <div class="recei-mess-list">
-                                                            <div class="recei-mess">Lorem ipsum dolor sit amet, consectetur adipiscing elit non iaculis</div>
-                                                            <div class="recei-mess">Donec tempor, sapien ac viverra</div>
+                                                            <div class="recei-mess">Lorem ipsum dolor sit amet,
+                                                                consectetur adipiscing elit non iaculis</div>
+                                                            <div class="recei-mess">Donec tempor, sapien ac viverra
+                                                            </div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -822,14 +842,16 @@
                                                     <span class="mess-time">30 Sec ago</span>
                                                     <div class="send-mess__inner">
                                                         <div class="send-mess-list">
-                                                            <div class="send-mess">Lorem ipsum dolor sit amet, consectetur adipiscing elit non iaculis</div>
+                                                            <div class="send-mess">Lorem ipsum dolor sit amet,
+                                                                consectetur adipiscing elit non iaculis</div>
                                                         </div>
                                                     </div>
                                                 </div>
                                             </div>
                                             <div class="au-chat-textfield">
                                                 <form class="au-form-icon">
-                                                    <input class="au-input au-input--full au-input--h65" type="text" placeholder="Type a message">
+                                                    <input class="au-input au-input--full au-input--h65" type="text"
+                                                        placeholder="Type a message">
                                                     <button class="au-input-icon">
                                                         <i class="zmdi zmdi-camera"></i>
                                                     </button>

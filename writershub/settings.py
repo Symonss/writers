@@ -126,6 +126,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
+
+# media url for uploaded photos and documents
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
 # Custom Django auth settings
 
 AUTH_USER_MODEL = 'coreapp.User'
