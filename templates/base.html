@@ -46,9 +46,16 @@
           <a class="nav-link" data-toggle="modal" data-target="#myModal">FAQs</a>
         </li>
 
-        <li class="nav-item ">
+        <li class="nav-item dropdown ">
           {% if user.is_authenticated %}
-          <a class="nav-link " href="#">{{ user.username }}</a>
+          <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+            {{user.username}}
+          </a>
+          <div class="dropdown-menu bg-secondary">
+            <a class="dropdown-item" href="#">Profile</a>
+            <a class="dropdown-item" href="#">Dashboard</a>
+            <a class="dropdown-item" href="#">Logout</a>
+          </div>
           {% else %}
           <a class="nav-link " href="#">Login</a>
           {% endif %}
