@@ -33,16 +33,17 @@
     <div class="collapse navbar-collapse" id="collapsibleNavbar">
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link " href="#">How it Works</a>
+          <a class="nav-link " data-toggle="modal" data-target="#myModal">How it Works</a>
+          <!-- add href later remove dts -->
         </li>
         <li class="nav-item">
-          <a class="nav-link " href="#">Latest Orders</a>
+          <a class="nav-link " data-toggle="modal" data-target="#myModal">Latest Orders</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Top Writers</a>
+          <a class="nav-link" href="#writersh">Top Writers</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">FAQs</a>
+          <a class="nav-link" data-toggle="modal" data-target="#myModal">FAQs</a>
         </li>
         <li class="nav-item ">
           <a class="nav-link " href="#">Login</a>
@@ -54,6 +55,31 @@
   <br>
   <br>
   <br>
+
+
+  <!-- The Modal -->
+  <div class="modal" id="myModal">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <!-- Modal Header -->
+        <div class="modal-header">
+          <h4 class="modal-title">Information!</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <!-- Modal body -->
+        <div class="modal-body">
+
+          This feature is coming soon! <br> just stay with us
+          try login
+        </div>
+        <!-- Modal footer -->
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
 
 
   <!-- <div class="container my-4">
