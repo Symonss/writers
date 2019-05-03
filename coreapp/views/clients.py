@@ -25,7 +25,7 @@ class ClientSignUpView(CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        return redirect('coreapp/home.html')
+        return redirect('home.html')
 
 @method_decorator([login_required, client_required], name='dispatch')
 class ClientDashboardView(ListView):
