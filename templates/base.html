@@ -5,7 +5,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>{% block title %}Writers Hub{% endblock %}</title>
+  <title>{% block title %}Penwork{% endblock %}</title>
   <link rel="icon" href="{% static 'img/favicon.png' %}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
@@ -25,8 +25,8 @@
 <body style="background-color:#e3dedb">
 
 
-  <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-    <a class="navbar-brand" href="#">Logo goes here</a>
+  <nav class="navbar navbar-expand-md bg-secondary navbar-dark">
+    <a class="navbar-brand" href="#">Penwork Researchers</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -50,6 +50,9 @@
       </ul>
     </div>
   </nav>
+  <br>
+  <br>
+  <br>
   <br>
 
 
@@ -94,18 +97,97 @@
             {% endfor %} -->
   {% block content %}
   {% endblock %}
-  </div>
-  </div>
-  <!-- <footer>
-            <a href="https://simpleisbetterthancomplex.com">© SimpleIsBetterThanComplex.com</a>
-            /
-            <a href="https://simpleisbetterthancomplex.com/tutorial/2018/01/18/how-to-implement-multiple-user-types-with-django.html">Read more about this example</a>
-            /
-            <a href="https://github.com/sibtc/django-multiple-user-types-example">GitHub repository</a>
-          </footer> -->
-  </div>
-  </div>
-  </div>
+
+  <!-- Footer -->
+  <footer class="page-footer font-small bg-secondary pt-4">
+
+    <!-- Footer Links -->
+    <div class="container-fluid text-center text-md-left" style="color:white">
+
+      <!-- Grid row -->
+      <div class="row">
+
+        <!-- Grid column -->
+        <div class="col-md-6 mt-md-0 mt-3">
+
+          <!-- Content -->
+          <h5 class="text-uppercase"> Penwork Research Writers</h5>
+          <ul class="list-unstyled">
+            <li>contact@penworkresearchers.com</li>
+            <li>Tel. +254792799958</li>
+            <li>Twitter</li>
+            <li>facebook</li>
+          </ul>
+          <p></p>
+
+        </div>
+        <!-- Grid column -->
+
+        <hr class="clearfix w-100 d-md-none pb-3">
+
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+
+          <!-- Links -->
+          <h5 class="text-uppercase">Links</h5>
+
+          <ul class="list-unstyled ">
+            <li>
+              <a href="#!" style="color:white">How it works</a>
+            </li>
+            <li>
+              <a href="#!" style="color:white">FAQs</a>
+            </li>
+            <li>
+              <a href="#!" style="color:white">Top writers</a>
+            </li>
+            <li>
+              <a href="#!" style="color:white">Latest Orders</a>
+            </li>
+          </ul>
+
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 mb-md-0 mb-3">
+
+          <!-- Links -->
+          <h5 class="text-uppercase">Links</h5>
+
+          <ul class="list-unstyled">
+            <li>
+              <a href="#!" style="color:white">Privacy Policy</a>
+            </li>
+            <li>
+              <a href="#!" style="color:white">Return/Refund Policy</a>
+            </li>
+            <li>
+              <a href="#!" style="color:white">License</a>
+            </li>
+            <li>
+              <a href="#!" style="color:white">News</a>
+            </li>
+          </ul>
+
+        </div>
+        <!-- Grid column -->
+
+      </div>
+      <!-- Grid row -->
+
+    </div>
+    <!-- Footer Links -->
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center bg-dark text-white py-3">© 2019 Copyright:
+      <a href="#"> <b>penworkresearchers.co</b> </a>
+    </div>
+    <!-- Copyright -->
+
+  </footer>
+  <!-- Footer -->
+
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
     integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
     crossorigin="anonymous"></script>
