@@ -54,10 +54,10 @@
           <div class="dropdown-menu bg-secondary">
             <a class="dropdown-item" href="#">Profile</a>
             <a class="dropdown-item" href="#">Dashboard</a>
-            <a class="dropdown-item" href="#">Logout</a>
+            <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
           </div>
           {% else %}
-          <a class="nav-link " href="#">Login</a>
+          <a class="nav-link " href="{% url 'login' %}">Login</a>
           {% endif %}
         </li>
 
