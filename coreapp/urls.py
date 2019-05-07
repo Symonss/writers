@@ -22,7 +22,7 @@ urlpatterns = [
     path('clients/', include(([
         path('order/create/', clients.OrderCreate.as_view(), name='order_create'),
         path('form/upload/', clients.model_form_upload, name= 'upload'),
-        path('clients/dashboard', clients.ClientDashboardView.as_view(), name='clients_dashboard'),
+        path('dashboard', clients.ClientDashboardView.as_view(), name='clients_dashboard'),
         path('order/<int:pk>/update/', clients.OrderUpdate.as_view(), name='order_update'),
         path('order/<int:pk>/delete/', clients.OrderDelete.as_view(), name='order_delete'),
 

@@ -53,7 +53,7 @@
           </a>
           <div class="dropdown-menu bg-secondary">
             <a class="dropdown-item" href="#">Profile</a>
-            <a class="dropdown-item" href="#">Dashboard</a>
+            <a class="dropdown-item" href="{% url 'clients:clients_dashboard'%}">Dashboard</a>
             <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
           </div>
           {% else %}
