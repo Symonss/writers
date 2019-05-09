@@ -93,45 +93,6 @@
   </div>
 
 
-  <!-- <div class="container my-4">
-    <div class="row justify-content-center">
-      <div class="col-md-10 col-sm-12">
-        <div class="row">
-          <div class="col-6">
-            <h1 class="logo">
-              <a href="{% url 'home' %}">
-
-                {% if user.is_authenticated %}
-                {% if user.is_writer %}
-                <span class="icon-feather" data-toggle="tooltip" data-placement="right" title="Teacher profile"></span>
-                {% else %}
-                <span class="icon-graduation-cap" data-toggle="tooltip" data-placement="right"
-                  title="Student profile"></span>
-                {% endif %}
-                {% endif %}
-              </a>
-            </h1>
-          </div>
-          <div class="col-6 text-right">
-            {% if user.is_authenticated %}
-            <p class="pt-3">Logged in as <strong>{{ user.username }}</strong>. <a href="{% url 'logout' %}">Log out</a>.
-            </p>
-            {% else %}
-            <a href="{% url 'login' %}" class="btn btn-light" role="button">Log in</a>
-            <a href="{% url 'signup' %}" class="btn btn-primary" role="button">Sign up</a>
-            {% endif %}
-          </div>
-        </div>
-        <div class="card mb-3">
-          <div class="card-body">
-            {% for message in messages %}
-            <div class="alert {{ message.tags }} alert-dismissible fade show" role="alert">
-              {{ message }}
-              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            {% endfor %} -->
   {% block content %}
   {% endblock %}
 
@@ -148,12 +109,13 @@
         <div class="col-md-6 mt-md-0 mt-3">
 
           <!-- Content -->
-          <h5 class="text-uppercase"> Penwork Research Writers</h5>
+          <h5 class="text-uppercase"> <b> Penworkresearch, LLC</b></h5>
           <ul class="list-unstyled">
-            <li>contact@penworkresearchers.com</li>
-            <li>Tel. +254792799958</li>
-            <li>Twitter</li>
-            <li>facebook</li>
+            <li> <b> 201 East. 5th Street, Suite 1200, Sheridan, WY 82801.USA </b></li>
+            <li> <b> Company registration number: 2019-000853381</b></li>
+            <li> <b> Country of registration: U.S.A </b></li>
+            <li> <b>Email: support@penworkresearch.com </b></li>
+            <li> <b> Phone: (1)-574-584-33 </b></li>
           </ul>
           <p></p>
 
