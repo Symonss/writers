@@ -1,30 +1,175 @@
-{% extends 'base.html' %}
+{% load widget_tweaks %}
+{% load static%}
+<br>
+<style>
+  .center-div {
+    position: center;
+    margin: auto;
+    top: 0;
+    right: 0;
+    align-content: center;
+    left: 0;
+    max-width: 70%;
+    min-width: 60%;
+    height: 70%;
+    padding-left: 30px;
+    padding-right: 30px;
+    border-radius: 3px;
+  }
+</style>
 
-{% load crispy_forms_tags %}
+<nav class="navbar navbar-expand-md bg-secondary navbar-dark">
+  <a class="navbar-brand" href="#">Penworkresearch</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="collapsibleNavbar">
+    <ul class="navbar-nav ml-auto">
+      <li class="nav-item">
+        <a class="nav-link " data-toggle="modal" data-target="#myModal">How it Works</a>
+        <!-- add href later remove dts -->
+      </li>
+      <li class="nav-item">
+        <a class="nav-link " data-toggle="modal" data-target="#myModal">Latest Orders</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#writersh">Top Writers</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" data-toggle="modal" data-target="#myModal">FAQs</a>
+      </li>
 
-{% block content %}
-{% if form.non_field_errors %}
-<div class="alert alert-danger alert-dismissible fade show" role="alert">
-  {% for error in form.non_field_errors %}
-  <p{% if forloop.last %} class="mb-0" {% endif %}>{{ error }}</p>
-    {% endfor %}
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-</div>
-{% endif %}
-<div class="row">
-  <div class="col-lg-4 col-md-6 col-sm-8 col-12">
-    <h2>Log in</h2>
-    <form method="post" novalidate>
-      {% csrf_token %}
-      <input type="hidden" name="next" value="{{ next }}">
-      {{ form.username|as_crispy_field }}
-      {{ form.password|as_crispy_field }}
-      <button type="submit" class="btn btn-primary">Log in</button>
-    </form>
-    <p>Don't have an account? signup here <a href="{% url 'signup' %}" class="btn btn-primary" role="button">Sign
-        up</a></p>
+      <li class="nav-item dropdown ">
+        {% if user.is_authenticated %}
+        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+          {{user.username}}
+        </a>
+        <div class="dropdown-menu bg-secondary">
+          <a class="dropdown-item" href="#">Profile</a>
+          <a class="dropdown-item" href="{% url 'clients:clients_dashboard'%}">Dashboard</a>
+          <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+        </div>
+        {% else %}
+        <a class="nav-link " href="{% url 'login' %}">Login</a>
+        {% endif %}
+      </li>
+
+
+    </ul>
   </div>
+</nav>
+<br>
+<br>
+<div class="center-div w3-card-4">
+  <br>
+  <img src="{% static 'images/logo.jpg'%}" alt="logo" width="90px">
+  <form method="post" novalidate>
+    {% csrf_token %}
+    {% include 'forms_template.html' with form=form %}
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 </div>
-{% endblock %}
+<br>
+<br>
+<!-- Footer -->
+<footer class="page-footer font-small bg-secondary pt-4">
+
+  <!-- Footer Links -->
+  <div class="container-fluid text-center text-md-left" style="color:white">
+
+    <!-- Grid row -->
+    <div class="row">
+
+      <!-- Grid column -->
+      <div class="col-md-6 mt-md-0 mt-3">
+
+        <!-- Content -->
+        <h5 class="text-uppercase"> <b> Penworkresearch, LLC</b></h5>
+        <ul class="list-unstyled">
+          <li> <b> 201 East. 5th Street, Suite 1200, Sheridan, WY 82801.USA </b></li>
+          <li> <b> Company registration number: 2019-000853381</b></li>
+          <li> <b> Country of registration: U.S.A </b></li>
+          <li> <b>Email: support@penworkresearch.com </b></li>
+          <li> <b> Phone: (1)-574-584-33 </b></li>
+        </ul>
+        <p></p>
+
+      </div>
+      <!-- Grid column -->
+
+      <hr class="clearfix w-100 d-md-none pb-3">
+
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">Links</h5>
+
+        <ul class="list-unstyled ">
+          <li>
+            <a href="#!" style="color:white">How it works</a>
+          </li>
+          <li>
+            <a href="#!" style="color:white">FAQs</a>
+          </li>
+          <li>
+            <a href="#!" style="color:white">Top writers</a>
+          </li>
+          <li>
+            <a href="#!" style="color:white">Latest Orders</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+      <!-- Grid column -->
+      <div class="col-md-3 mb-md-0 mb-3">
+
+        <!-- Links -->
+        <h5 class="text-uppercase">Links</h5>
+
+        <ul class="list-unstyled">
+          <li>
+            <a href="#!" style="color:white">Privacy Policy</a>
+          </li>
+          <li>
+            <a href="#!" style="color:white">Return/Refund Policy</a>
+          </li>
+          <li>
+            <a href="#!" style="color:white">License</a>
+          </li>
+          <li>
+            <a href="#!" style="color:white">News</a>
+          </li>
+        </ul>
+
+      </div>
+      <!-- Grid column -->
+
+    </div>
+    <!-- Grid row -->
+
+  </div>
+  <!-- Footer Links -->
+
+  <!-- Copyright -->
+  <div class="footer-copyright text-center bg-dark text-white py-3">© 2019 Copyright:
+    <a href="#"> <b>penworkresearch.com</b> </a>
+  </div>
+  <!-- Copyright -->
+
+</footer>
+<!-- Footer -->
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+  integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+  integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+  integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script type="text/javascript">
+  $(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+  })
+</script>

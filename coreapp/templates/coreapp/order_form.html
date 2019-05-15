@@ -1,14 +1,26 @@
-{% extends 'base.html' %}
+{% load widget_tweaks %}
 
-{% load crispy_forms_tags %}
+<br>
+<style>
+  .center-div {
+    position: center;
+    margin: auto;
+    top: 0;
+    right: 0;
+    align-content: center;
+    left: 0;
+    max-width: 70%;
+    height: 70%;
+    padding-left: 30px;
+    border-radius: 3px;
+  }
+</style>
 
-{% block content %}
-<form action="" method="post">
-   {% csrf_token %}
-   <table>
-   {{ form.as_table }}
-   </table>
-   <input type="submit" value="Submit">
- </form>
+<div class="center-div">
 
-{% endblock %}
+  <form method="post" novalidate>
+    {% csrf_token %}
+    {% include 'forms_template.html' with form=form %}
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

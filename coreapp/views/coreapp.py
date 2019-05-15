@@ -16,9 +16,9 @@ def home(request):
         if request.user.is_client:
             return redirect('index')
         elif request.user.is_admin:
-                return redirect('admins:admins_dashboard')
+                return redirect('index')
         elif request.user.is_sub_admin:
-                return redirect('sub_admins:sub_admins_dashboard')
+                return redirect('index')
         else:
-            return redirect('writers:writers_dashboard')
+            return redirect('index')
     return render(request, 'coreapp/home.html')

@@ -1,17 +1,26 @@
-{% extends 'base.html' %}
+{% load widget_tweaks %}
 
-{% load crispy_forms_tags %}
+<br>
+<style>
+  .center-div {
+    position: center;
+    margin: auto;
+    top: 0;
+    right: 0;
+    align-content: center;
+    left: 0;
+    max-width: 500px;
+    height: 70%;
+    padding-left: 30px;
+    border-radius: 3px;
+  }
+</style>
 
-{% block content %}
-  <div class="row">
-    <div class="col-md-8 col-sm-10 col-12">
-      <h2>Sign up as a {{ user_type }}</h2>
-      <form method="post" novalidate>
-        {% csrf_token %}
-        <input type="hidden" name="next" value="{{ next }}">
-        {{ form|crispy }}
-        <button type="submit" class="btn btn-success">Sign up</button>
-      </form>
-    </div>
-  </div>
-{% endblock %}
+<div class="center-div">
+
+  <form method="post" novalidate>
+    {% csrf_token %}
+    {% include 'forms_template.html' with form=form %}
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

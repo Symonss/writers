@@ -25,7 +25,7 @@ class ClientSignUpView(CreateView):
     def form_valid(self, form):
         user = form.save()
         login(self.request, user)
-        return redirect('home.html')
+        return redirect('index')
 
 @method_decorator([login_required, client_required], name='dispatch')
 class ClientDashboardView(ListView):
@@ -39,7 +39,7 @@ class ClientDashboardView(ListView):
 
 class OrderCreate(CreateView):
     model = Order
-    fields = '__all__'
+    fields = ['service','order_topic','order_description','deadline','pages','document']
     success_url = reverse_lazy('home')
 
     # initial = {'date_of_death': '05/01/2018'}

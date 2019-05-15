@@ -10,7 +10,7 @@
                 <a class="nav-link active" href="#">My Orders</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">New Order</a>
+                <a class="nav-link" href="{% url 'clients:order_create' %}">New Order</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">Finance</a>
@@ -22,7 +22,7 @@
                 <a class="nav-link" href="#">Profile</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link " href="#">Logout</a>
+                <a class="nav-link " href="{% url 'logout' %}">Logout</a>
             </li>
         </ul>
         <hr class="d-sm-none">
@@ -148,7 +148,6 @@
                                     <th>T No.</th>
                                     <th>Date created</th>
                                     <th>Due date</th>
-                                    <th>Status</th>
                                     <th>Actions</th>
 
 
@@ -161,7 +160,7 @@
                                     <td>OD-1453</td>
                                     <td>02-10-2019</td>
                                     <td>05-10-2019</td>
-                                    <td>Pending</td>
+
                                     <td><i>Pay| Edit</i></td>
                                 </tr>
                                 <tr>
@@ -169,7 +168,7 @@
                                     <td>OD-30405</td>
                                     <td>07-05-2019</td>
                                     <td>10-05-2019</td>
-                                    <td>In Progress</td>
+
                                     <td><i>Add files|comments</i></td>
                                 </tr>
                                 <tr>
@@ -177,7 +176,7 @@
                                     <td>OD-36875</td>
                                     <td>07-05-2019</td>
                                     <td>10-05-2019</td>
-                                    <td>In Progress</td>
+
                                     <td><i>Add files|comments</i></td>
                                 </tr>
                             </tbody>
@@ -194,7 +193,7 @@
                                     <th>T No.</th>
                                     <th>Date created</th>
                                     <th>Due date</th>
-                                    <th>Status</th>
+                                    <th>Completed By:</th>
                                     <th>Actions</th>
 
 
@@ -207,7 +206,7 @@
                                     <td>OD-56709</td>
                                     <td>12-10-2018</td>
                                     <td>30-10-2018</td>
-                                    <td>Completed</td>
+                                    <td>Symons</td>
                                     <td><i>no actions</i></td>
                                 </tr>
                                 <tr>
@@ -215,7 +214,7 @@
                                     <td>OD-46703</td>
                                     <td>12-10-2019</td>
                                     <td>30-10-2019</td>
-                                    <td>Completed</td>
+                                    <td>James</td>
                                     <td><i>no actions</i></td>
                                 </tr>
                                 <tr>
@@ -223,7 +222,7 @@
                                     <td>OD-2979</td>
                                     <td>12-10-2019</td>
                                     <td>30-10-2019</td>
-                                    <td>Completed</td>
+                                    <td>Grace</td>
                                     <td><i>no actions</i></td>
                                 </tr>
                             </tbody>
@@ -241,4 +240,4 @@
 
 
 
-{% endblock %}
+{% endblock%}
